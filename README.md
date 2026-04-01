@@ -125,7 +125,7 @@ docker run -it python:3.12-slim python
 
 ## Images
 
-Speichere das Dockerfile mit Namen `Dockerfile` im Root-Verzeichnis des Projekts mit dem beispielhaften Inhalt:
+Man speichere das Dockerfile mit Namen `Dockerfile` im Root-Verzeichnis des Projekts mit dem beispielhaften Inhalt, wobei die Datei `requirements.txt` im Root-Verzeichnis und `main.py` im Ordner `Quellordner` vorhanden sein müssen:
 
 ```text
 # Basis-Image, auf dem aufgebaut wird.
@@ -153,7 +153,7 @@ RUN apt-get update && apt-get install -y \
 # Virtuelle Python-Umgebung erstellen.
 RUN python3 -m venv /opt/venv
 
-# Umgebungsvariable setzen, damit virtuelle Python-Umgebung verwendbar.
+# Umgebungsvariable setzen, damit virtuelle Python-Umgebung verwendbar ist.
 ENV PATH="/opt/venv/bin:$PATH"
 
 COPY requirements.txt requirements.txt
