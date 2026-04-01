@@ -103,6 +103,9 @@ docker image ls
 
 # Image löschen.
 docker image rm <IMAGE>
+
+# Image aus einer Registry (standardmäßig Docker Hub) herunterladen oder aktualisieren.
+docker pull <IMAGE>
 ```
 
 ### Beispiele
