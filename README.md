@@ -1,5 +1,8 @@
 # Docker Schummelzettel
 
+![Docker](https://img.shields.io/badge/docker-ready-blue)
+![License](https://img.shields.io/badge/license-Apache%202.0-green)
+
 Dies ist mein persönlicher Schummelzettel für [Docker](https://www.docker.com/) unter Linux. Andere Plattformen wurden nicht getestet.
 
 ## Inhaltsverzeichnis
