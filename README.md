@@ -54,6 +54,7 @@ Bedeutung der Bestandteile:
 * `-v <host_path>:<container_path>`: BIND-MOUNTS erstellen, um Dateien zwischen Host und Container teilen.
 * `-v <name_of_volume>:<container_path>`: VOLUMES erstellen. Dieser Ordner wird von Docker verwaltet.
 * `-p <host_port>:<container_port>`: Ports weiterleiten (für Webserver etc.).
+* `--name <mein_name>`: Damit bekommt der Container den gewünschten Namen.
 
 ### Weitere Befehle
 
