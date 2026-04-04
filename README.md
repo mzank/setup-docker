@@ -125,6 +125,10 @@ docker run python:3.12-slim python -c "print('Hallo Wien!')"
 
 # Interaktive Python-Konsole starten.
 docker run -it python:3.12-slim python
+
+# Vom Container meinUbuntu den Ordner meinOrdner
+# in den Host-Ordner meinOrdnerHost kopieren.
+docker cp meinUbuntu:/home/ubuntu/meinOrdner /home/marco/meinOrdnerHost/
 ```
 
 ---
