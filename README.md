@@ -108,8 +108,11 @@ docker image rm <IMAGE>
 # Image aus einer Registry (standardmäßig Docker Hub) herunterladen oder aktualisieren.
 docker pull <IMAGE>
 
-# Dateien aus Container kopieren
+# Dateien aus dem Container kopieren.
 docker cp <CONTAINER>:<PFAD_IM_CONTAINER> <PFAD_HOST>
+
+# Dateien in den Container kopieren.
+docker cp <PFAD_HOST> <CONTAINER>:<PFAD_IM_CONTAINER>
 ```
 
 ### Beispiele
