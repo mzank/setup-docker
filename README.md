@@ -87,6 +87,9 @@ docker stop <CONTAINER>
 # Option -ai: interaktiv und an Terminal anhängen
 docker start -ai <CONTAINER>
 
+# Container umbenennen:
+docker rename <ALTER_NAME> <NEUER_NAME>
+
 # Container löschen.
 docker rm <CONTAINER>
 
