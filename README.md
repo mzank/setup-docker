@@ -111,6 +111,9 @@ docker image rm <IMAGE>
 # Image aus einer Registry (standardmäßig Docker Hub) herunterladen oder aktualisieren.
 docker pull <IMAGE>
 
+# Neues Image aus einem laufenden oder gestoppten Container erstellen.
+docker commit [OPTIONS] <CONTAINER> <NAME_DES_NEUEN_IMAGES>
+
 # Dateien aus dem Container kopieren.
 docker cp <CONTAINER>:<PFAD_IM_CONTAINER> <PFAD_HOST>
 
