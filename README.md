@@ -27,7 +27,7 @@ https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
 ## Docker Hub
 
-Auf der Webseite [Docker Hub](https://hub.docker.com) sind viele Images vorhanden. 
+Auf der Webseite [Docker Hub](https://hub.docker.com) sind viele Images vorhanden.
 
 **Warnung:** Man verwende nur offizielle oder verifizierte Images (zB mit "official" Badge auf Docker Hub), da Images Schadcode enthalten können.
 
@@ -50,11 +50,11 @@ Bedeutung der Bestandteile:
 ### Mögliche Optionen in `[OPTIONEN]`
 * `-it`: Interaktiv und Terminal, nötig für Eingaben.
 * `--rm`: Container wird nach dem Beenden automatisch gelöscht.
-* `-d`: detached mode, also Container im Hintergrund starten.
-* `-v <host_path>:<container_path>`: BIND-MOUNTS erstellen, um Dateien zwischen Host und Container teilen.
-* `-v <name_of_volume>:<container_path>`: VOLUMES erstellen. Dieser Ordner wird von Docker verwaltet.
-* `-p <host_port>:<container_port>`: Ports weiterleiten (für Webserver etc.).
-* `--name <mein_name>`: Damit bekommt der Container den gewünschten Namen.
+* `-d`: Detached Mode, also Container im Hintergrund starten.
+* `-v <HOST_PATH>:<CONTAINER_PATH>`: Bind-Mounts erstellen, um Dateien zwischen Host und Container teilen.
+* `-v <NAME_OF_VOLUME>:<CONTAINER_PATH>`: Volumes erstellen. Dieser Ordner wird von Docker verwaltet.
+* `-p <HOST_PORT>:<CONTAINER_PORT>`: Ports weiterleiten (für Webserver etc.).
+* `--name <MEIN_NAME>`: Damit bekommt der Container den gewünschten Namen.
 
 ### Weitere Befehle
 
@@ -71,7 +71,7 @@ docker run <IMAGE>@meinDigest
 # Container starten und nach Stopp automatisch löschen.
 docker run --rm <IMAGE>
 
-# Container mit Umgebungsvariablen meineENV1 und meineENV2 starten:
+# Container mit Umgebungsvariablen meineENV1 und meineENV2 starten.
 docker run -e meineENV1=ABC -e meineENV2=DEF <IMAGE>
 
 # Zeigt an, welche Container gerade laufen.
@@ -84,7 +84,7 @@ docker ps -a
 docker stop <CONTAINER>
 
 # Beendeten Container wieder starten.
-# Option -ai: interaktiv und an Terminal anhängen
+# Option -ai: interaktiv und an Terminal anhängen.
 docker start -ai <CONTAINER>
 
 # Container umbenennen:
@@ -99,13 +99,13 @@ docker container prune
 # Entfernt alle ungenutzten Build-Cache-Daten und mit -a auch Cache-Einträge, die derzeit nicht vom BuildKit-Builder referenziert werden.
 docker builder prune -a
 
-# Logs des Containers betrachten. 
+# Logs des Containers betrachten.
 docker logs <CONTAINER>
 
 # Programm/Befehl auf gestartetem Container ausführen.
 docker exec -it <CONTAINER> <BEFEHL>
 
-# Alle lokal verfügbaren Images anzeigen:
+# Alle lokal verfügbaren Images anzeigen.
 docker image ls
 
 # Image löschen.
@@ -121,10 +121,10 @@ docker pull <IMAGE>
 docker commit [OPTIONS] <CONTAINER> <NAME_DES_NEUEN_IMAGES>
 
 # Dateien aus dem Container kopieren.
-docker cp <CONTAINER>:<PFAD_IM_CONTAINER> <PFAD_HOST>
+docker cp <CONTAINER>:<CONTAINER_PATH> <HOST_PATH>
 
 # Dateien in den Container kopieren.
-docker cp <PFAD_HOST> <CONTAINER>:<PFAD_IM_CONTAINER>
+docker cp <HOST_PATH> <CONTAINER>:<CONTAINER_PATH>
 ```
 
 ### Beispiele
@@ -153,16 +153,16 @@ Man speichere das Dockerfile mit Namen `Dockerfile` im Root-Verzeichnis des Proj
 # Basis-Image, auf dem aufgebaut wird.
 FROM ubuntu:24.04
 
-# Metadaten über das Image (optional)
+# Metadaten über das Image (optional).
 LABEL maintainer="Marco Zank"
 LABEL version="0.1"
 LABEL description="Ein einfaches Beispielimage"
 
-# Arbeitsverzeichnis im Container festlegen
+# Arbeitsverzeichnis im Container festlegen.
 WORKDIR /app
 
 # Abhängigkeiten installieren.
-# Befehl
+# Befehl:
 #        rm -rf /var/lib/apt/lists/*
 # ist, um temporäre Paketlisten zu löschen. Image wird kleiner.
 RUN apt-get update && apt-get install -y \
@@ -181,8 +181,8 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Dateien vom Host ins Image kopieren
-# Der zweite COPY-Befehl sorgt dafür, dass Abhängigkeiten gecacht bleiben, 
+# Dateien vom Host ins Image kopieren.
+# Der zweite COPY-Befehl sorgt dafür, dass Abhängigkeiten gecacht bleiben,
 # wenn sich nur der Code ändert.
 COPY ./Quellordner /app
 
@@ -200,7 +200,7 @@ für das Dockerfile namens `Dockerfile` *oder*
 ```bash
 docker build -f <DOCKERFILE> -t meinimage .
 ```
-erzeugt aus dem aktuellen Ordner `.` das Image `meinimage`, welches Docker *intern* speichert. 
+erzeugt aus dem aktuellen Ordner `.` das Image `meinimage`, welches Docker *intern* speichert.
 
 
 ```bash
