@@ -96,6 +96,9 @@ docker rm <CONTAINER>
 # Alle gestoppten Container löschen.
 docker container prune
 
+# Entfernt alle ungenutzten Build-Cache-Daten und mit -a auch Cache-Einträge, die derzeit nicht vom BuildKit-Builder referenziert werden.
+docker builder prune -a
+
 # Logs des Containers betrachten. 
 docker logs <CONTAINER>
 
@@ -107,6 +110,9 @@ docker image ls
 
 # Image löschen.
 docker image rm <IMAGE>
+
+# Entfernt alle Docker-Images, die von keinem vorhandenen Container verwendet werden.
+docker image prune -a
 
 # Image aus einer Registry (standardmäßig Docker Hub) herunterladen oder aktualisieren.
 docker pull <IMAGE>
